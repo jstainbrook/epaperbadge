@@ -39,7 +39,7 @@ to
 RESET_PIN = 17
 BUSY_PIN = 24
 DC_PIN = 25
-<pre>
+</pre>
 
 Save the file (ctrl-x,y)
 
