@@ -43,6 +43,25 @@ DC_PIN = 25
 
 Save the file (ctrl-x,y)
 
-You should be good to run the demos and install these scripts!
+When you are ready, run the script with:
+<pre>
+sudo python3 begin.py
+</pre>
+
+If you want to run the script at boot, you would have to install the screen utility as it requires an active user logged into a terminal:
+<pre>
+sudo apt-get install screen
+</pre>
+Then add the command to execute it in a detached screen in rc.local;  
+<pre>
+sudo nano /etc/rc.local
+</pre>
+and before the exit 0 add this line (I put all my scripts in /home/pi/scripts - change this to wherever this directory lives on your pi)
+<pre>
+screen -dmS epaper bash -c "/home/pi/scripts/begin.py" &
+</pre>
+
+Make sure to add the & after the call and put it all between the fi and exit 0 of your rc.local, or it will hang on boot!
+
 
 --hyperjoule
